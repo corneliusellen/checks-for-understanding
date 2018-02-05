@@ -30,7 +30,10 @@ You have access to these class methods by Active Record. Even though they aren't
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
 
 Team.find(4).name
-Team.find(4).owner_id
+
+**
+owner_of_team_4_id = Team.find(4).owner_id
+Owner.find(owner_of_team_4_id)
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -42,7 +45,8 @@ end
 
 Now how would you find the owner of the team with an id of 4?
 
-Team.find(4).owner_id ???
+**
+Team.find(4).owner
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
 
