@@ -1,8 +1,11 @@
 ## Week Two - Module 2 Recap
 
-Fork this repository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!).
+Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!). 
 
 Note: When you're done, submit a PR.
+
+
+### Week 2 Questions
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
 ActiveRecord is a Domain Specific Language (I think... I know Sinatra and Rails are but doesn't this make AR a Ruby DSL as well??). It is used to interact with the Model part of the MVC architecture in Rails. It gives you methods to manipulate and query data (it actually uses SQL commands to query the database).
