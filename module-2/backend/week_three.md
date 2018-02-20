@@ -26,7 +26,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 
 6. What is an example of a route helper? When would you use them?
 *vehicles_path or vehicle_path(<vehicle object>) - use them to DRY up your code when referring to links and so you're not typing out long URIs.
-  
+
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
 *_url returs the full URL and _path returns only the URI
 
@@ -34,12 +34,12 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 *strong params is a method you MUST add in each of your controllers to check the proper params are coming through. Rails will not let your blindly pass params to your CRUD methods. This is necessary for security - for example a mischievous person could go into Postman, send a post request to your application for parameters that are not correct and mess up your program somehow... but with strong params that mischievous person will get an error back along the lines of: Invalid Authenticity Token.
 
 9. What role does `form_for` play in helping us create our forms?
-*It helps us more easily create forms without using html's tedious form elements. It 
+*It helps us more easily create forms without using html's tedious form elements. It
 
 10. How does `form_for` know where to submit the user's input?
-*I'm not sure on this one, but I think it is because of the corresponding name of the html.erb file. If the file is named "new.html.erb" the form will submit the input as a "Create" action to the controller where it came from. If the file was named "edit.html.erb" the form will submitt the input as an "Update" action.
+*It knows because of the instance variable (the object) passed to it. If the object is empty, rails interprets the action as a "create." If the object holds information then rails interprets the action as an "edit." Rails also knows which path (or controller) to go to because of the object name. You can set the url manually through the options hash if you want to override Rail's interpretation.
 
-11. Create a form using a `form_for` helper to create a new `Horse`. 
+11. Create a form using a `form_for` helper to create a new `Horse`.
 *<%= form_for @horse do |f| %>
 *<%= f.label :name %>
 *<%= f.text_field :name %>
@@ -58,7 +58,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 14. How would you call the method `prance` from within the method `move` on a `Horse` instance?
 *def move
   prance
-end 
+end
 
 15. Given the following hash:
 
@@ -76,7 +76,7 @@ Classes taking on (inheriting) other parent classes's methods.
 Choose One:
 I was able to answer every question without relying on outside resources
 * I was able to answer most questions independently, but utilized outside resources for a few
-I was able to answer a few questions independently, but relied heavily on outside resources 
+I was able to answer a few questions independently, but relied heavily on outside resources
 
 Choose One:
 * I feel confident about the content presented this week
