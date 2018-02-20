@@ -1,6 +1,6 @@
 ## Week Two - Module 2 Recap
 
-Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!). 
+Fork or re-pull this respository. Answer the questions to the best of your ability. Try to answer them with limited amount of external research. These questions cover the majority of what we've learned this week (which is a TON - YOU are a web developer!!!).
 
 Note: When you're done, submit a PR.
 
@@ -95,7 +95,7 @@ This was question #5 above
 This was question #5 above
 
 6. Give an example of when you might want to store information besides ids on a join table.
-???
+If it is a join table called Showtimes which joins a Movie table and a Theater table, you would want to store a datetime column on the Showtimes table in addition to the movie and the theater id.
 
 7. Describe and diagram the relationship between patients and doctors.
 A patient belongs to a doctor and a doctor has many patients.
