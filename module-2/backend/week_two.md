@@ -26,7 +26,7 @@ Team.where
 Team.create
 Team.new
 
-You can all call reader methods on instances of Team. AR gets these reader methods by interpreting the table's columns as attributes of the object Team.
+You can call all reader methods on instances of Team. AR gets these reader methods by interpreting the table's columns as attributes of the object Team.
 
 You have access to these class methods by Active Record. Even though they aren't defined on the class, Active Record uses corresponding SQL commands to query the database.
 

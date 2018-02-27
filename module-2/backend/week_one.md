@@ -56,7 +56,7 @@ Hypertext Transfer Protocol
 <%= %> This will execute and render the Ruby code to the screen.
 
 14. What's an ORM?
-Object Relational Mappers - a framework which serves as the layer between your database and your Model class. It allows you to easily interact and manipulate your database without having to use long and repetitive SQL commands.
+Object Relational Mappers - a framework which serves as the layer between your database and your Model class. It allows you to easily interact and manipulate your database without having to use long and repetitive SQL commands. **It is a way for us to create objects from rows of a database table for easy interaction.**
 
 15. What's the most commonly used ORM in ruby (Sinatra & Rails)?
 ActiveRecord
@@ -97,19 +97,19 @@ Then, populate the database with the CSV data by the following command:
 ```
 activities = {
   hiking: {cost: $0, supplies: ['hiking shoes', 'water', 'compass']},
-  karaoke: {cost: $10, supplies: ['courage', 'microphone'],
-  brunch: {cost: $35, supplies: ['mimosa flutes'],
-  antiquing: {cost: $200, supplies: ['list of antique stores']
+  karaoke: {cost: $10, supplies: ['courage', 'microphone']},
+  brunch: {cost: $35, supplies: ['mimosa flutes']},
+  antiquing: {cost: $200, supplies: ['list of antique stores']}
 }
 ```
 How would I add 'granola bar' to things you should have when hiking?
-activities[:hiking][:supplies] += "granola bar"
+activities[:hiking][:supplies] << "granola bar"
 
 23. What are the 4 Principles of OOP? Give a one sentence explanation of each.
 Encapsulation - Protects data from the user by hiding the internal representation of the object from them.
 Abstraction - Creating and defining objects
 Inheritance - A way to reuse code of already existing objects (e.g. classes can inherit attributes and methods from other classes which creates a hierarchy)
-Polumorphism - ???
+Polumorphism - Methods of the same name on different objects, creating the ability to build dynamically
 
 ### Self Assessment:
 Choose One:

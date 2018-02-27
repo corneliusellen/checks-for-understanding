@@ -20,6 +20,7 @@ The purpose is to speed up the process of serving our static assets.
 
 5. Why do we precompile our assets?
 Precompiling makes each of your assets receive a fingerprint, which will indicate any updates that you may deploy down the line and tells user's browsers to fetch the updated asset.
+*When in production we want our assests complied, minified, fingerprinted, and cached. Heroku does this for you automatically when you build. However, you might need to debug production in which case you want to precomplie your assets so you can see the version that would be used in production. Important to remember to clobber those assets though before you try to re-build on Heroku as Heroku won't precompile if you already have compiled assets in your public folder.*
 
 6. What do each of the following tags do?
 
@@ -29,8 +30,8 @@ Precompiling makes each of your assets receive a fingerprint, which will indicat
 <%= image_tag "rails.png" %>
 ```
 
-Links to your css stylesheet
-Links to your javascript stylesheet
+Links to your stylesheet manifest
+Links to your javascript manifest
 Links to a specific image
 
 7. What are some of the elements of a great read me? What are some of the benefits of taking the time to update a readme for our project?
@@ -45,17 +46,18 @@ A great readme will make your application more attractive to other developers an
 Visible, Mobility and Cognition
 
 9. `before_save` is an example of a what? Where in our Rails application would we find a `before_save`?
-This is an example of a filter. A filter is something to execute before some of all of the controller actions. It would be found in the controllers or in the application controller.
+This is an example of a callback. A filter is something to execute before some of all of the controller actions. It would be found in the MODEL.
 
 10. Given the following object, how would we create a scope for all users who are active?
 
 ```ruby
 User.create(name: "Happy", active: true)
 ```
-I'm not sure.
+scope :active, -> { where(active: true)}
 
 11. What is the difference between a scope and a class method?
 A class methods works on ALL instances of the class. A scope is something you can use when you are constantly making the same query, so you can use a scope to always return the same value.
+**Scopes should be used to return a subset of records/objects of that class. A class method can be used to find a much broader variety of information.**
 
 ### Review Questions:  
 12. Given the following hash:  
@@ -77,11 +79,12 @@ A class methods works on ALL instances of the class. A scope is something you ca
 13. What is polymorphism? How does it relate to duck-typing? What are two ways you use this in everyday Rails applications?  
 "It is the programming language's ability to process objects differently depending on their data type or class"
 
+**Polymorphism is the practice of creating methods of the same name on different types of objects. Duck-typing is the idea of if it looks like a duck and acts like a duck, treat it like a duck. a.k.a. if it acts like a data type you're used to treat it like that data type. You've benefited from this when interacting with ActiveRecord::Associations, ActiveRecord:Relations (just like Arrays) or Sessions (just like Hashes).**
+
 14. How would you clean the string "(630) 854-5483" to "630.854.5483"?  
 Assign the string to a variable like so number = "(630) 854-5483"
 Then:
-number.delete "(",")"," ","-"
-number.scan(".", 3)
+ num.tr!("()\- ", "") num.insert(3, ".") num.insert(7, ".")
 
 ### Self Assessment:
 Choose One:

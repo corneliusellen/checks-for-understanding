@@ -28,13 +28,13 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 *vehicles_path or vehicle_path(<vehicle object>) - use them to DRY up your code when referring to links and so you're not typing out long URIs.
 
 7. What's the difference between what `_url` and `_path` return when combined with a routes prefix?
-*_url returs the full URL and _path returns only the URI
+*_url returns the full URL and _path returns only the URI
 
 8. What are strong params and why are they necessary?
 *strong params is a method you MUST add in each of your controllers to check the proper params are coming through. Rails will not let your blindly pass params to your CRUD methods. This is necessary for security - for example a mischievous person could go into Postman, send a post request to your application for parameters that are not correct and mess up your program somehow... but with strong params that mischievous person will get an error back along the lines of: Invalid Authenticity Token.
 
 9. What role does `form_for` play in helping us create our forms?
-*It helps us more easily create forms without using html's tedious form elements. It
+*It helps us more easily create forms without using html's tedious form elements.
 
 10. How does `form_for` know where to submit the user's input?
 *It knows because of the instance variable (the object) passed to it. If the object is empty, rails interprets the action as a "create." If the object holds information then rails interprets the action as an "edit." Rails also knows which path (or controller) to go to because of the object name. You can set the url manually through the options hash if you want to override Rail's interpretation.
@@ -49,6 +49,7 @@ Note: When you're done, submit a PR with a reflection in the comments about how 
 
 12. Why do we want to validate our models?
 *We want to make sure a user cannot create an instance of a resource without inputting all of it's required attributes. Another validation is for uniquness so we may not want two of the exact same instances or a resource.
+*Ensures that only valid data is saved to our database.
 
 13. What are the steps of the DNS lookup?
 *The browser queries the computer's cache first. If it's not there, the browser has probably never visited the site before so the operating system (specifically the resolving name server) queries a series of other servers including the root name, TLD (top level domain, which is like .com, .org, .gov...) and authoritative servers (in that order) to find the IP address. Once it has the numeric IP address, it returns in back to the browser.
